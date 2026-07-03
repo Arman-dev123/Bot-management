@@ -22,16 +22,16 @@ public class MongoDbContext
 
     private void CreateIndexes()
     {
-        // Unique email index
+    
         var emailIndex = Builders<User>.IndexKeys.Ascending(u => u.Email);
         Users.Indexes.CreateOne(new CreateIndexModel<User>(emailIndex,
             new CreateIndexOptions { Unique = true }));
 
-        // Bot userId index
+    
         var botUserIndex = Builders<Bot>.IndexKeys.Ascending(b => b.UserId);
         Bots.Indexes.CreateOne(new CreateIndexModel<Bot>(botUserIndex));
 
-        // Chat compound index
+  
         var chatIndex = Builders<ChatMessage>.IndexKeys
             .Ascending(c => c.UserId)
             .Ascending(c => c.BotId)
