@@ -1,0 +1,27 @@
+.list-page { padding: 36px 40px; max-width: 900px; }
+.page-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; }
+.page-header h1 { color: var(--text-primary); font-size: 24px; font-weight: 700; margin: 0 0 4px; }
+.page-header p { color: var(--text-muted); font-size: 13.5px; margin: 0; }
+.bots-list, .bots-grid { display: flex; flex-direction: column; gap: 10px; }
+.bot-row { padding: 18px 20px; display: flex; align-items: center; gap: 16px; transition: border-color var(--transition); }
+.bot-row:hover { border-color: rgba(139,92,246,0.3); }
+.bot-avatar { width: 42px; height: 42px; border-radius: 11px; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.bot-avatar mat-icon { color: white; font-size: 22px; width: 22px; height: 22px; }
+.bot-info { flex: 1; min-width: 0; }
+.bot-name { color: var(--text-primary); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.bot-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.bot-project { color: var(--text-muted); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 240px; }
+.bot-date { color: var(--text-muted); font-size: 12px; }
+.bot-row-actions { display: flex; align-items: center; gap: 4px; }
+.chat-btn { color: var(--accent-light) !important; border-color: rgba(139,92,246,0.3) !important; }
+.edit-icon { color: var(--primary-light); }
+.del-icon { color: #f87171; }
+.empty-state { text-align: center; padding: 60px 24px; background: var(--bg-card); border: 1px dashed var(--border); border-radius: var(--radius-lg); }
+.empty-state mat-icon { font-size: 48px; width: 48px; height: 48px; color: var(--text-muted); opacity: 0.4; }
+.empty-state h3 { color: var(--text-primary); font-size: 17px; margin: 14px 0 6px; }
+.empty-state p { color: var(--text-muted); margin: 0 0 22px; font-size: 13.5px; }
+.skeleton-row { pointer-events: none; }
+.sk-avatar { width: 42px; height: 42px; border-radius: 11px; flex-shrink: 0; }
+.skeleton-info { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.sk-name { height: 16px; width: 160px; }
+.sk-proj { height: 12px; width: 240px; }

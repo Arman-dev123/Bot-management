@@ -1,0 +1,49 @@
+<div class="form-page">
+  <div class="page-header">
+    <a routerLink="/bots" class="back-link"><mat-icon>arrow_back</mat-icon> My Bots</a>
+    <h1>Edit Bot</h1>
+    <p>Update bot name or language</p>
+  </div>
+
+  @if (fetching()) {
+    <div class="form-card card skeleton-form">
+      <div class="skeleton sk-field"></div>
+      <div class="skeleton sk-field"></div>
+      <div class="skeleton sk-btn"></div>
+    </div>
+  } @else {
+    <div class="form-card card">
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <mat-form-field appearance="outline">
+          <mat-label>Bot Name</mat-label>
+          <input matInput formControlName="botName">
+          @if (form.get('botName')?.invalid && form.get('botName')?.touched) {
+            <mat-error>Name required (2-100 chars)</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Language Code</mat-label>
+          <mat-select formControlName="languageCode">
+            @for (lang of languages; track lang.code) {
+              <mat-option [value]="lang.code">{{ lang.label }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <div class="info-banner">
+          <mat-icon>info</mat-icon>
+          To update credentials, delete this bot and create a new one.
+        </div>
+
+        <div class="form-actions">
+          <button mat-stroked-button type="button" routerLink="/bots" class="cancel-btn">Cancel</button>
+          <button mat-raised-button type="submit" class="btn-primary" [disabled]="loading() || form.invalid">
+            @if (loading()) { <mat-spinner diameter="18" /> }
+            @else { <mat-icon>save</mat-icon> Save Changes }
+          </button>
+        </div>
+      </form>
+    </div>
+  }
+</div>
