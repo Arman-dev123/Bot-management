@@ -543,10 +543,8 @@ npm run test:coverage    # With coverage report (output: coverage/index.html)
 
 ## Conclusion
 
-This project covers the full stack of the training task: JWT-secured REST APIs, real-time WebSocket messaging via SignalR, AES-encrypted credential storage, Dialogflow ES integration with a cached gRPC client, unit test coverage above 50% on both frontend and backend, and integration with NICE CXone DFO Live Chat through both a JavaScript widget and a Studio script backend endpoint. The codebase follows standard industry patterns including Repository, Service Layer, Dependency Injection, and Singleton, as outlined in the task requirements. It is ready for code review via the linked repository.
+This project covers the full stack of the training task: JWT-secured REST APIs, real-time WebSocket messaging via SignalR, AES-encrypted credential storage, Dialogflow ES integration with a cached gRPC client, unit test coverage above 53% on backend and 83 on frontend , and integration with NICE CXone DFO Live Chat through both a JavaScript widget and a Studio script backend endpoint. The codebase follows standard industry patterns including Repository, Service Layer, Dependency Injection, and Singleton, as outlined in the task requirements. It is ready for code review via the linked repository.
 
 ---
 
-> **Repository:** [https://github.com/Arman-dev123/BOT-MANAGEMENT--PLATFORM](https://github.com/Arman-dev123/BOT-MANAGEMENT--PLATFORM)
-> **Training Programme:** InteractCX — Full Stack Bot Management Platform
-> **Stack:** Angular 22 · ASP.NET Core 8 · MongoDB · Google Dialogflow ES · NICE CXone DFO
+
