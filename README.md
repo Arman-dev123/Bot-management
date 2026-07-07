@@ -424,16 +424,15 @@ dotnet publish -c Release -o ./publish
 
 ## Screenshots
 
-
-| Screen | Description |
-|--------|-------------|
-| ![Login](#) | Login page |
-| ![Register](#) | Registration page |
-| ![Dashboard](#) | Dashboard with bot stats and bot grid |
-| ![Create Bot](#) | Bot creation form with credential file upload |
-| ![Chat](#) | Real-time chat window |
-| ![Test Panel](#) | Bot test panel with latency metrics |
-| ![DFO Chat](#) | NICE DFO Live Chat configuration and launcher |
+| Screen | Preview |
+|--------|---------|
+| Login | ![Login](screenshots/capture.png) |
+| Register | ![Register](screenshots/register.png) |
+| Dashboard | ![Dashboard](screenshots/Dashboard.png) |
+| Create Bot | ![Create Bot](screenshots/create-bot.png) |
+| Chat | ![Chat](screenshots/chat.png) |
+| Test Panel | ![Test Panel](screenshots/Test-panel.png) |
+| DFO Chat | ![DFO Chat](screenshots/dfo.png) |
 
 ---
 
