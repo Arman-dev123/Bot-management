@@ -98,3 +98,22 @@ public class ApiErrorDto
     public string? Details { get; set; }
     public int StatusCode { get; set; }
 }
+
+
+// ── DFO Live Chat DTOs ───────────────────────────────────────────────────────
+
+public class DfoMessageDto
+{
+    public string Message { get; set; } = string.Empty;
+    public string? SessionId { get; set; }
+
+    // MongoDB Bot ID to route this message to. Map this from the DF 
+    public string? BotId { get; set; }
+}
+
+public class DfoResponseDto
+{
+    public string Message { get; set; } = string.Empty;
+    public string SessionId { get; set; } = string.Empty;
+}
+
