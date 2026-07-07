@@ -431,33 +431,34 @@ dotnet publish -c Release -o ./publish
   </tr>
   <tr>
     <td>Login</td>
-    <td><img src="screenshots/Capture.PNG" width="500"></td>
+    <td><img src="screenshots/Capture.PNG" width="250"></td>
   </tr>
   <tr>
     <td>Register</td>
-    <td><img src="screenshots/register.PNG" width="500"></td>
+    <td><img src="screenshots/register.PNG" width="250"></td>
   </tr>
   <tr>
     <td>Dashboard</td>
-    <td><img src="screenshots/Dashboard.PNG" width="500"></td>
+    <td><img src="screenshots/Dashboard.PNG" width="250"></td>
   </tr>
   <tr>
     <td>Create Bot</td>
-    <td><img src="screenshots/create-bot.PNG" width="500"></td>
+    <td><img src="screenshots/create-bot.PNG" width="250"></td>
   </tr>
   <tr>
     <td>Chat</td>
-    <td><img src="screenshots/chat.PNG" width="500"></td>
+    <td><img src="screenshots/chat.PNG" width="250"></td>
   </tr>
   <tr>
     <td>Test Panel</td>
-    <td><img src="screenshots/Test-panel.PNG" width="500"></td>
+    <td><img src="screenshots/Test-panel.PNG" width="250"></td>
   </tr>
   <tr>
     <td>DFO Chat</td>
-    <td><img src="screenshots/dfo.PNG" width="500"></td>
+    <td><img src="screenshots/dfo.PNG" width="250"></td>
   </tr>
 </table>
+
 ---
 
 ## Running Tests
