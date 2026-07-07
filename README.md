@@ -426,7 +426,7 @@ dotnet publish -c Release -o ./publish
 
 | Screen | Preview |
 |--------|---------|
-| Login | ![Login](screenshots/capture.png) |
+| Login | ![Login](screenshots/Capture.PNG) |
 | Register | ![Register](screenshots/register.png) |
 | Dashboard | ![Dashboard](screenshots/Dashboard.png) |
 | Create Bot | ![Create Bot](screenshots/create-bot.png) |
