@@ -1,6 +1,6 @@
-# AI Bot Management Platform
+Bot Management Platform
 
-A full-stack web application for managing Dialogflow-powered chatbots, built as part of the InteractCX training programme. The system allows users to register, create and configure bots, test them through a dedicated test panel, and serve them to end customers via NICE CXone DFO Live Chat.
+A full-stack web application for managing Dialogflow-powered chatbots. The system allows users to register, create and configure bots, test them through a dedicated test panel, and serve them to end customers via NICE CXone DFO Live Chat.
 
 ---
 
