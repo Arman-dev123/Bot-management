@@ -439,7 +439,7 @@ dotnet publish -c Release -o ./publish
   </tr>
   <tr>
     <td>Dashboard</td>
-    <td><img src="screenshots/Dashboard.PNG" width="250"></td>
+    <td><img src="screenshots/Dashboard.PNG" width="400"></td>
   </tr>
   <tr>
     <td>Create Bot</td>
@@ -451,7 +451,7 @@ dotnet publish -c Release -o ./publish
   </tr>
   <tr>
     <td>Test Panel</td>
-    <td><img src="screenshots/Test-panel.PNG" width="250"></td>
+    <td><img src="screenshots/Test-panel.PNG" width="400"></td>
   </tr>
   <tr>
     <td>DFO Chat</td>
