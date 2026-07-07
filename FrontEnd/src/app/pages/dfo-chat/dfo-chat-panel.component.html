@@ -1,0 +1,153 @@
+<!-- ── Floating launcher button ─────────────────────────────────────── -->
+@if (configured() && isLoaded()) {
+  <button class="dfo-fab"
+          [class.open]="panelOpen()"
+          (click)="togglePanel()"
+          [matTooltip]="panelOpen() ? 'Close NICE DFO Live Chat' : 'Open NICE DFO Live Chat'"
+          matTooltipPosition="left"
+          aria-label="Toggle NICE DFO Live Chat">
+    @if (panelOpen()) {
+      <mat-icon>close</mat-icon>
+    } @else {
+      <mat-icon>support_agent</mat-icon>
+      <span class="fab-label">NICE DFO Live Chat</span>
+    }
+  </button>
+}
+
+<!-- ── Config panel (shown until widget is loaded) ─────────────────── -->
+<div class="panel-page">
+  <div class="page-header">
+    <div class="header-icon">
+      <mat-icon>support_agent</mat-icon>
+    </div>
+    <div>
+      <h1>NICE DFO Live Chat</h1>
+      <p>Configure and launch the NICE DFO Live Chat widget for your customers</p>
+    </div>
+  </div>
+
+  <!-- Status banner -->
+  @if (isLoaded()) {
+    <div class="status-banner status-ok">
+      <mat-icon>check_circle</mat-icon>
+      <div>
+        <strong>Widget active</strong>
+        <span>NICE DFO Live Chat is running. Use the button in the bottom-right to open the chat panel.</span>
+      </div>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="status-banner status-error">
+      <mat-icon>error_outline</mat-icon>
+      <span>{{ error() }}</span>
+    </div>
+  }
+
+  <!-- Configuration card -->
+  <div class="config-card card">
+    <div class="config-card-header">
+      <mat-icon>settings</mat-icon>
+      <h3>Widget Configuration</h3>
+      @if (isLoaded()) {
+        <span class="loaded-badge"><mat-icon>check</mat-icon> Loaded</span>
+      }
+    </div>
+
+    <p class="config-desc">
+      These values come from your NICE CXone account.<br>
+      Go to <strong>ACD → Digital → Points of Contact Digital → Chat → Initialization &amp; Test → Website Script</strong>
+      to get your Script URL, Brand ID, and Channel ID from the generated snippet.
+    </p>
+
+    <form [formGroup]="configForm" (ngSubmit)="loadWidget()" novalidate>
+      <mat-form-field appearance="outline">
+        <mat-label>Script URL</mat-label>
+        <input matInput formControlName="scriptUrl"
+               placeholder="https://web-modules-de-na1.niceincontact.com/loader/1/loader.js">
+        <mat-hint>The loader module URL — the `u` value passed to CXoneDfo in your website script</mat-hint>
+        @if (configForm.get('scriptUrl')?.invalid && configForm.get('scriptUrl')?.touched) {
+          <mat-error>Script URL is required</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Brand ID</mat-label>
+        <input matInput formControlName="brandId" placeholder="e.g. 1586">
+        <mat-hint>The numeric ID passed to cxone('init', brandId)</mat-hint>
+        @if (configForm.get('brandId')?.invalid && configForm.get('brandId')?.touched) {
+          <mat-error>Brand ID is required</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Channel ID</mat-label>
+        <input matInput formControlName="channelId" placeholder="e.g. chat_1842a9a4-fa58-4469-875b-cb76fcb87e8c">
+        <mat-hint>The chat_... ID passed to cxone('chat', 'init', brandId, channelId)</mat-hint>
+        @if (configForm.get('channelId')?.invalid && configForm.get('channelId')?.touched) {
+          <mat-error>Channel ID is required</mat-error>
+        }
+      </mat-form-field>
+
+      @if (loading()) {
+        <div class="loading-row">
+          <mat-spinner diameter="24"></mat-spinner>
+          <span>Loading NICE DFO widget…</span>
+        </div>
+      } @else {
+        <div class="form-actions">
+          @if (!isLoaded()) {
+            <button mat-raised-button type="submit" class="btn-primary load-btn">
+              <mat-icon>power_settings_new</mat-icon>
+              Load Widget
+            </button>
+          } @else {
+            <button mat-raised-button type="button" class="btn-open" (click)="openPanel()">
+              <mat-icon>open_in_new</mat-icon>
+              Open Live Chat
+            </button>
+          }
+        </div>
+      }
+    </form>
+  </div>
+
+  <!-- How it works -->
+  <div class="how-card card">
+    <div class="how-header">
+      <mat-icon>info</mat-icon>
+      <h3>How This Works</h3>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <div>
+          <strong>Configure in NICE CXone</strong>
+          <p>Create a Live Chat channel in ACD, assign a Studio script with your bot, and copy the widget script.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <div>
+          <strong>Paste credentials above</strong>
+          <p>Enter the Script URL, Brand ID, and Channel ID from your NICE CXone Website Script page.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <div>
+          <strong>Click "Load Widget"</strong>
+          <p>The NICE DFO loader module is injected and cxone('init', ...) / cxone('chat', 'init', ...) are queued and run.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">4</div>
+        <div>
+          <strong>Chat with the Bot</strong>
+          <p>Click the launcher to open the NICE DFO Live Chat panel. Messages route through your Studio script to the Dialogflow bot.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

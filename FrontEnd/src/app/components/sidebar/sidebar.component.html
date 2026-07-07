@@ -1,0 +1,69 @@
+<aside class="sidebar" [class.collapsed]="collapsed()">
+  <!-- Logo -->
+  <div class="sidebar-logo">
+    <div class="logo-icon">
+      <mat-icon>smart_toy</mat-icon>
+    </div>
+    @if (!collapsed()) {
+      <span class="logo-text">BotPlatform</span>
+    }
+    <button mat-icon-button class="collapse-btn" (click)="toggleCollapse()"
+            [matTooltip]="collapsed() ? 'Expand' : 'Collapse'" matTooltipPosition="right">
+      <mat-icon>{{ collapsed() ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+    </button>
+  </div>
+
+  <!-- Main nav -->
+  <nav class="sidebar-nav">
+    @if (!collapsed()) { <div class="nav-label">Menu</div> }
+    @for (item of navItems; track item.route) {
+      @if (item.divider && !collapsed()) {
+        <div class="nav-divider"></div>
+      }
+      <a class="nav-item"
+         [routerLink]="item.route"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+         [matTooltip]="collapsed() ? item.label : ''"
+         matTooltipPosition="right"
+         [class.dfo-item]="item.route === '/dfo-chat'">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        @if (!collapsed()) {
+          <span>{{ item.label }}</span>
+          @if (item.route === '/dfo-chat' && dfoChatLoaded) {
+            <span class="live-dot" matTooltip="Widget active"></span>
+          }
+        }
+      </a>
+    }
+  </nav>
+
+  <!-- Bot list -->
+  @if (bots().length > 0 && !collapsed()) {
+    <div class="bot-section">
+      <div class="nav-label">My Bots</div>
+      @for (bot of bots(); track bot.id) {
+        <div class="nav-item bot-item" (click)="openChat(bot.id)">
+          <mat-icon>chat_bubble_outline</mat-icon>
+          <span class="bot-name-text">{{ bot.botName }}</span>
+        </div>
+      }
+    </div>
+  }
+
+  <!-- User footer -->
+  <div class="sidebar-footer">
+    <div class="user-block" [class.collapsed-user]="collapsed()">
+      <div class="user-avatar">{{ userInitial }}</div>
+      @if (!collapsed()) {
+        <div class="user-info">
+          <div class="user-name">{{ currentUser?.name }}</div>
+          <div class="user-email">{{ currentUser?.email }}</div>
+        </div>
+      }
+    </div>
+    <button mat-icon-button (click)="logout()" matTooltip="Logout" matTooltipPosition="right" class="logout-btn">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</aside>

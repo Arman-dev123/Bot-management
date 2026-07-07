@@ -1,0 +1,113 @@
+/* ── Floating Action Button ─────────────────────────────────────── */
+.dfo-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  height: 54px;
+  padding: 0 20px;
+  border-radius: 27px;
+  background: linear-gradient(135deg, #0066cc, #0052a3) !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 24px rgba(0, 102, 204, 0.45);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dfo-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0, 102, 204, 0.55);
+}
+
+.dfo-fab.open {
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+.dfo-fab mat-icon { font-size: 22px; width: 22px; height: 22px; }
+.fab-label { white-space: nowrap; }
+
+/* ── Page ───────────────────────────────────────────────────────── */
+.panel-page { padding: 36px 40px; max-width: 760px; }
+
+.page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.header-icon {
+  width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0;
+  background: linear-gradient(135deg, #0066cc, #0052a3);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,102,204,0.3);
+}
+.header-icon mat-icon { color: white; font-size: 28px; width: 28px; height: 28px; }
+.page-header h1 { color: var(--text-primary); font-size: 24px; font-weight: 700; margin: 0 0 4px; }
+.page-header p { color: var(--text-muted); font-size: 13.5px; margin: 0; }
+
+/* ── Status banners ─────────────────────────────────────────────── */
+.status-banner {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 18px; border-radius: var(--radius-md);
+  margin-bottom: 20px; font-size: 13.5px;
+}
+.status-ok {
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  color: #6ee7b7;
+}
+.status-ok mat-icon { color: var(--success); font-size: 20px; width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+.status-ok strong { display: block; color: #34d399; margin-bottom: 2px; }
+.status-error {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: var(--error-light);
+}
+.status-error mat-icon { color: var(--error); font-size: 20px; width: 20px; height: 20px; flex-shrink: 0; }
+
+/* ── Config card ────────────────────────────────────────────────── */
+.config-card { padding: 26px; margin-bottom: 20px; }
+.config-card-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.config-card-header mat-icon { color: #60a5fa; }
+.config-card-header h3 { color: var(--text-primary); font-size: 15px; font-weight: 600; margin: 0; flex: 1; }
+.loaded-badge {
+  display: flex; align-items: center; gap: 4px;
+  background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3);
+  color: #34d399; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;
+}
+.loaded-badge mat-icon { font-size: 14px; width: 14px; height: 14px; }
+.config-desc { color: var(--text-muted); font-size: 13px; line-height: 1.6; margin: 0 0 20px; }
+.config-desc strong { color: var(--text-secondary); }
+form { display: flex; flex-direction: column; gap: 14px; }
+mat-form-field { width: 100%; }
+.loading-row { display: flex; align-items: center; gap: 12px; color: var(--text-muted); font-size: 13.5px; padding: 8px 0; }
+.form-actions { display: flex; gap: 10px; }
+.load-btn { background: linear-gradient(135deg, #0066cc, #0052a3) !important; color: white !important; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.btn-open { background: rgba(16,185,129,0.15) !important; color: #34d399 !important; border: 1px solid rgba(16,185,129,0.3) !important; display: flex; align-items: center; gap: 6px; }
+
+/* ── How it works card ──────────────────────────────────────────── */
+.how-card { padding: 24px; }
+.how-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.how-header mat-icon { color: var(--primary-light); }
+.how-header h3 { color: var(--text-primary); font-size: 15px; font-weight: 600; margin: 0; }
+.how-steps { display: flex; flex-direction: column; gap: 16px; }
+.how-step { display: flex; align-items: flex-start; gap: 14px; }
+.step-num {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #0066cc, #0052a3);
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 13px; font-weight: 700;
+}
+.how-step strong { display: block; color: var(--text-primary); font-size: 14px; margin-bottom: 3px; }
+.how-step p { color: var(--text-muted); font-size: 13px; margin: 0; line-height: 1.55; }
+
+/* Material dark overrides */
+::ng-deep .mat-mdc-input-element { color: white !important; }
+::ng-deep .mat-mdc-form-field-label { color: var(--text-muted) !important; }
+::ng-deep .mdc-notched-outline__leading,
+::ng-deep .mdc-notched-outline__notch,
+::ng-deep .mdc-notched-outline__trailing { border-color: var(--border) !important; }

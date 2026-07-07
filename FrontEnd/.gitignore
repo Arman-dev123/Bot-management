@@ -1,0 +1,55 @@
+# Angular build output
+/dist/
+/out-tsc/
+/build/
+
+# Dependencies
+/node_modules/
+
+# Coverage reports
+/coverage/
+
+# Angular cache
+/.angular/cache/
+/.angular/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Environment files (optional)
+.env
+.env.local
+.env.*
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+.cache/
+
+# Compiled files
+*.tsbuildinfo
+
+# Firebase (if used)
+
+
+# Optional lock files (keep package-lock.json if using npm)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
