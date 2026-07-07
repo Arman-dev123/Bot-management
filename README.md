@@ -116,7 +116,7 @@ The backend follows a layered architecture: **Controllers → Services → Repos
 | **Frontend Testing** | Vitest + Angular TestBed | 2.0.x |
 | **Backend Framework** | ASP.NET Core | 8.0 (.NET 8) |
 | **Backend Language** | C# | 12 |
-| **Database** | MongoDB | 7.0+ |
+| **Database** | MongoDB | 8.0.26 |
 | **MongoDB Driver** | MongoDB.Driver | 2.27.0 |
 | **Authentication** | JWT Bearer (HS256) | 8.0.0 |
 | **Password Hashing** | BCrypt.Net-Next | 4.0.3 |
@@ -424,7 +424,6 @@ dotnet publish -c Release -o ./publish
 
 ## Screenshots
 
-> _Screenshots to be added after final UI review._
 
 | Screen | Description |
 |--------|-------------|
