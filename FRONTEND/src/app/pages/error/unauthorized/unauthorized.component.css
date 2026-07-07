@@ -1,6 +1,0 @@
-.error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--bg-base); }
-.error-content { text-align: center; padding: 40px; }
-.lock-icon { font-size: 56px; width: 56px; height: 56px; color: var(--error); opacity: 0.6; margin-bottom: 8px; }
-.error-code { font-size: 72px; font-weight: 900; color: rgba(239,68,68,0.7); line-height: 1; margin-bottom: 16px; }
-h1 { color: var(--text-primary); font-size: 24px; font-weight: 700; margin: 0 0 10px; }
-p { color: var(--text-muted); font-size: 15px; margin: 0 0 28px; }
