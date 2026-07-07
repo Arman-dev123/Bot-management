@@ -1,0 +1,7 @@
+.vs
+bin
+obj
+coverage-report
+coverage.info
+coverage.opencover
+dotnet
